@@ -2,8 +2,12 @@
   "name": "",
   "version": "",
   "description": "",
-  "scripts" : {
+  "scripts": {
     "test": "echo \"No tests yet...\""
   },
-  "author": ""
+  "author": "Rune Moskvil Lyngås <rune.moskvil.lyngaas@vtfk.no> (https://github.com/runely)",
+  "dependencies": {
+    "@vtfk/logger": "2.4.0",
+    "mongodb": "3.6.3"
+  }
 }
