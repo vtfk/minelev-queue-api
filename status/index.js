@@ -25,8 +25,7 @@ const handleStatus = async (context, req) => {
       timeStamp: new Date().getTime()
     }
     logger('info', ['status', 'update', 'id', id])
-    const result = await logs.updateOne({ _id }, { "$push": { "documentStatus": status } })
-    logger('info', ['status', 'update', 'id', id, 'success'])
+    const result = await logs.updateOne({ _id }, { "$push": { "status": status } })
     return result
   } catch (error) {
     logger('error', ['status', 'error', error])
