@@ -5,7 +5,7 @@ const HTTPError = require('../lib/http-error')
 const mongo = require('../lib/get-mongo')
 
 const handleStatus = async (context, req) => {
-  if (process.env.NODE_ENV !== "development") logConfig({ azure: { context } })
+  if (process.env.NODE_ENV !== 'development') logConfig({ azure: { context } })
 
   const { id } = req.params
   const { data } = req.body
@@ -26,7 +26,7 @@ const handleStatus = async (context, req) => {
       timestamp: new Date().getTime()
     }
     logger('info', ['status', 'update', 'id', id])
-    const result = await logs.updateOne({ _id }, { "$push": { "status": status } })
+    const result = await logs.updateOne({ _id }, { $push: { status: status } })
     logger('info', ['status', 'update', 'id', id, 'success', data.status])
     return result
   } catch (error) {
