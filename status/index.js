@@ -1,3 +1,4 @@
+const withJWT = require('../lib/with-jwt')
 const { ObjectId } = require('mongodb')
 const { logConfig, logger } = require('@vtfk/logger')
 const HTTPError = require('../lib/http-error')
@@ -35,4 +36,4 @@ const handleStatus = async (context, req) => {
   }
 }
 
-module.exports = (context, req) => handleStatus(context, req)
+module.exports = (context, req) => withJWT(context, req, handleStatus)
