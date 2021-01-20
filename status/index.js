@@ -22,7 +22,7 @@ const handleStatus = async (context, req) => {
     const logs = await mongo()
     const status = {
       status: data.status,
-      timeStamp: new Date().getTime()
+      timestamp: new Date().getTime()
     }
     logger('info', ['status', 'update', 'id', id])
     const result = await logs.updateOne({ _id }, { "$push": { "status": status } })
