@@ -4,6 +4,8 @@
 
 ## API
 
+All calls requires a valid JSON Web Token
+
 ### `GET /queue`
 
 Get next job from queue
