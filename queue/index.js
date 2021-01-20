@@ -2,6 +2,7 @@ const withJWT = require('../lib/with-jwt')
 const { logger } = require('@vtfk/logger')
 const HTTPError = require('../lib/http-error')
 const mongo = require('../lib/get-mongo')
+const getResponse = require('../lib/get-response-object')
 
 const handleQueue = async (context, req) => {
   try {
@@ -16,7 +17,7 @@ const handleQueue = async (context, req) => {
     } else {
       logger('info', ['queue', 'get next document in queue', 'success', 'no documents in queue'])
     }
-    return documents
+    return getResponse(documents)
   } catch (error) {
     logger('error', ['queue', 'error', error])
     return new HTTPError(500, 'An unknown error occured', error).toJSON()

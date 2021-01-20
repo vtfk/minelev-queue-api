@@ -3,6 +3,7 @@ const { ObjectId } = require('mongodb')
 const { logger } = require('@vtfk/logger')
 const HTTPError = require('../lib/http-error')
 const mongo = require('../lib/get-mongo')
+const getResponse = require('../lib/get-response-object')
 
 const handleStatus = async (context, req) => {
   const { id } = req.params
@@ -26,7 +27,7 @@ const handleStatus = async (context, req) => {
     logger('info', ['status', 'update', 'id', id])
     const result = await logs.updateOne({ _id }, { $push: { status: status } })
     logger('info', ['status', 'update', 'id', id, 'success', data.status])
-    return result
+    return getResponse(result)
   } catch (error) {
     logger('error', ['status', 'error', error])
     if (error instanceof HTTPError) return error.toJSON()
