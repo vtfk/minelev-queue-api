@@ -26,6 +26,7 @@ const handleStatus = async (context, req) => {
     }
     logger('info', ['status', 'update', 'id', id])
     const result = await logs.updateOne({ _id }, { "$push": { "status": status } })
+    logger('info', ['status', 'update', 'id', id, 'success', data.status])
     return result
   } catch (error) {
     logger('error', ['status', 'error', error])
