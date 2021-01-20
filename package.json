@@ -3,12 +3,16 @@
   "version": "",
   "description": "",
   "scripts": {
-    "test": "echo \"No tests yet...\""
+    "test": "standard",
+    "standard:fix": "standard --fix"
   },
   "author": "Rune Moskvil Lyngås <rune.moskvil.lyngaas@vtfk.no> (https://github.com/runely)",
   "dependencies": {
     "@vtfk/logger": "2.4.0",
     "jsonwebtoken": "8.5.1",
     "mongodb": "3.6.3"
+  },
+  "devDependencies": {
+    "standard": "16.0.3"
   }
 }
