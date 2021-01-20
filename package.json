@@ -1,10 +1,11 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
+  "name": "minelev-queue-api",
+  "version": "1.0.0",
+  "description": "Azure function to get and update job from queue",
   "scripts": {
     "test": "standard",
-    "standard:fix": "standard --fix"
+    "standard:fix": "standard --fix",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "author": "Rune Moskvil Lyngås <rune.moskvil.lyngaas@vtfk.no> (https://github.com/runely)",
   "dependencies": {
