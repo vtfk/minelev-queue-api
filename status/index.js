@@ -1,12 +1,10 @@
 const withJWT = require('../lib/with-jwt')
 const { ObjectId } = require('mongodb')
-const { logConfig, logger } = require('@vtfk/logger')
+const { logger } = require('@vtfk/logger')
 const HTTPError = require('../lib/http-error')
 const mongo = require('../lib/get-mongo')
 
 const handleStatus = async (context, req) => {
-  if (process.env.NODE_ENV !== 'development') logConfig({ azure: { context } })
-
   const { id } = req.params
   const { data } = req.body
 

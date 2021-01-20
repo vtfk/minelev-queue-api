@@ -1,11 +1,9 @@
 const withJWT = require('../lib/with-jwt')
-const { logConfig, logger } = require('@vtfk/logger')
+const { logger } = require('@vtfk/logger')
 const HTTPError = require('../lib/http-error')
 const mongo = require('../lib/get-mongo')
 
 const handleQueue = async (context, req) => {
-  if (process.env.NODE_ENV !== 'development') logConfig({ azure: { context } })
-
   try {
     const logs = await mongo()
     logger('info', ['queue', 'get next document in queue'])
