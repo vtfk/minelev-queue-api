@@ -12,7 +12,7 @@
   "author": "Rune Moskvil Lyngås <rune.moskvil.lyngaas@vtfk.no> (https://github.com/runely)",
   "dependencies": {
     "@vtfk/logger": "3.0.1",
-    "jsonwebtoken": "8.5.1",
+    "jsonwebtoken": "9.0.0",
     "mongodb": "3.7.4"
   },
   "devDependencies": {
